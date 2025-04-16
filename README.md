@@ -35,20 +35,22 @@ Hardware – PCs, Cyclone II , USB flasher
 
 *Developed by: 212224230014 AKBAR.I:*
 vhdl
+```
 module ex2(a,b,c,d,f1);
 input a,b,c,d;
 output f1;
 assign f1=((~b&~d)|(~a&b&d)|(a&b&~c));
 endmodule
-
+```
 
 vhdl
+```
 module ex2_2(w,x,y,z,f2);
 input w,x,y,z;
 output f2;
 assign f2= ((~y&z)|(w&z)|(x&y)|(w&y&~z));
 endmodule
-
+```
 
 *RTL realization*
 # 1-a)
