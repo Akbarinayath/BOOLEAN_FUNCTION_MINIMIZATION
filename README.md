@@ -1,6 +1,6 @@
 # BOOLEAN_FUNCTION_MINIMIZATION
 
-*AIM:*
+**AIM:**
 
 To implement the given logic function verify its operation in Quartus using Verilog programming.
 
@@ -8,15 +8,45 @@ F1= A’B’C’D’+AC’D’+B’CD’+A’BCD+BC’D
 
 F2=xy’z+x’y’z+w’xy+wx’y+wxy
 
-*Equipment Required:*
+**Equipment Required:**
 
 Hardware – PCs, Cyclone II , USB flasher
 
-*Software – Quartus prime*
+**Software – Quartus prime**
 
-*Theory*
-![WhatsApp Image 2025-03-26 at 13 57 23_413f3334](https://github.com/user-attachments/assets/e95b143e-8dca-4431-9f51-7585f5e1c0b0)
-*Procedure*
+**Theory**
+Boolean function minimization is the process of simplifying Boolean algebraic expressions to reduce the number of logic gates and complexity in a digital circuit leading to more efficient, faster, and less costly hardware
+
+For minimizing Boolean expressions, we can use a set of rules and laws (like distributive, associative, and complement laws) to simplify Boolean expressions. This method focuses on applying algebraic manipulations to reduce the complexity of the expression by eliminating redundant terms.
+
+Identity Law A . 1 = A, A + 0 = A
+
+Null Law A . 0 = 0 ,A + 1 = 1
+
+Idempotent Law A AA, A+A=A
+
+Complement Law A * A' = 0 , A + A' = 1
+
+Distributive Law A (B+C) A-B+A-C
+
+De Morgan's Law (AB)' A' B', (A + B) = A' B'
+
+Absorption Law A (A+B) A, A+ (AB) = A
+
+Associative Law A+ (B+C) = (A+B) + C, A.(B.C) = (A.B).C
+
+Commutative law A B BA,A+B=B+A
+
+
+
+**Logic Diagram**
+
+<img width="610" height="342" alt="image" src="https://github.com/user-attachments/assets/e32f37fb-e7a1-4aac-b871-5f58b423f6b5" />
+<img width="557" height="514" alt="image" src="https://github.com/user-attachments/assets/9613276b-291e-432b-a924-fe5aa57cb549" />
+<img width="845" height="1330" alt="image" src="https://github.com/user-attachments/assets/aab4b36c-bd1b-4a90-b625-6cf6b4484fad" />
+<img width="844" height="1353" alt="image" src="https://github.com/user-attachments/assets/4f3acd47-5e8b-4f02-b49e-e5297e0f7a66" />
+
+**Procedure**
 
 1.	Type the program in Quartus software.
 
@@ -29,42 +59,42 @@ Hardware – PCs, Cyclone II , USB flasher
 5.	For different input combinations generate the timing diagram.
 
 
-## Program:
-
-*Program to implement the given logic function and to verify its operations in quartus using Verilog programming*. 
-
-*Developed by: 212224230014 AKBAR.I:*
-vhdl
-```
-module ex2(a,b,c,d,f1);
+**Program:**
+i)
+module funct1(a,b,c,d,f1);
 input a,b,c,d;
 output f1;
-assign f1=((~b&~d)|(~a&b&d)|(a&b&~c));
+assign f1=((~b & ~d)|(~a & b & d)|(a & b & ~c));
 endmodule
-```
 
-vhdl
-```
-module ex2_2(w,x,y,z,f2);
+ii)
+module funct2(w,x,y,z,f2);
 input w,x,y,z;
 output f2;
-assign f2= ((~y&z)|(w&z)|(x&y)|(w&y&~z));
+assign f2=((~y & z)|( w & y )|(x & y));
 endmodule
-```
 
-*RTL realization*
-# 1-a)
-![ex2](https://github.com/user-attachments/assets/649cc145-ba52-4298-9cb6-2fca77af9897)
-# 1-b)
-![ex2_2](https://github.com/user-attachments/assets/3854152f-2b1d-4a1b-8497-9a9fe5771b17)
+**RTL realization**
 
-*Timing Diagram*
-# 2-a)
-![Screenshot 2025-03-14 143354](https://github.com/user-attachments/assets/0b3f910e-0f1f-43c2-a9dc-9c663001e820)
+**Output:**
+i)
+<img width="1920" height="1080" alt="Screenshot (25)" src="https://github.com/user-attachments/assets/9a054cd0-2711-433d-90a0-4b975d21af17" />
 
-# 2-b)
-![Screenshot 2025-03-26 142443](https://github.com/user-attachments/assets/7aa0b28d-f3cb-4b51-b518-c08af29634a1)
+ii)
+<img width="1920" height="1080" alt="Screenshot (27)" src="https://github.com/user-attachments/assets/af8e7137-4721-47f5-bea9-de98fab60209" />
 
-*Result:*
+
+**RTL**
+
+**Timing Diagram**
+i)
+<img width="1920" height="1080" alt="Screenshot (26)" src="https://github.com/user-attachments/assets/7212250c-7562-4de9-875c-5e6c421f3893" />
+
+ii)
+<img width="1920" height="1080" alt="Screenshot (28)" src="https://github.com/user-attachments/assets/5cbb52c5-c624-434f-b546-bf9d4f861d12" />
+
+**Result:**
 
 Thus the given logic functions are implemented using and their operations are verified using Verilog programming.
+
+
