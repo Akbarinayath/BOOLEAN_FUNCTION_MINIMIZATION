@@ -1,5 +1,7 @@
 # BOOLEAN_FUNCTION_MINIMIZATION
 
+**DATE:** 14.11.2025
+
 **AIM:**
 
 To implement the given logic function verify its operation in Quartus using Verilog programming.
@@ -15,36 +17,8 @@ Hardware – PCs, Cyclone II , USB flasher
 **Software – Quartus prime**
 
 **Theory**
-Boolean function minimization is the process of simplifying Boolean algebraic expressions to reduce the number of logic gates and complexity in a digital circuit leading to more efficient, faster, and less costly hardware
-
-For minimizing Boolean expressions, we can use a set of rules and laws (like distributive, associative, and complement laws) to simplify Boolean expressions. This method focuses on applying algebraic manipulations to reduce the complexity of the expression by eliminating redundant terms.
-
-Identity Law A . 1 = A, A + 0 = A
-
-Null Law A . 0 = 0 ,A + 1 = 1
-
-Idempotent Law A AA, A+A=A
-
-Complement Law A * A' = 0 , A + A' = 1
-
-Distributive Law A (B+C) A-B+A-C
-
-De Morgan's Law (AB)' A' B', (A + B) = A' B'
-
-Absorption Law A (A+B) A, A+ (AB) = A
-
-Associative Law A+ (B+C) = (A+B) + C, A.(B.C) = (A.B).C
-
-Commutative law A B BA,A+B=B+A
-
-
 
 **Logic Diagram**
-
-<img width="610" height="342" alt="image" src="https://github.com/user-attachments/assets/e32f37fb-e7a1-4aac-b871-5f58b423f6b5" />
-<img width="557" height="514" alt="image" src="https://github.com/user-attachments/assets/9613276b-291e-432b-a924-fe5aa57cb549" />
-<img width="845" height="1330" alt="image" src="https://github.com/user-attachments/assets/aab4b36c-bd1b-4a90-b625-6cf6b4484fad" />
-<img width="844" height="1353" alt="image" src="https://github.com/user-attachments/assets/4f3acd47-5e8b-4f02-b49e-e5297e0f7a66" />
 
 **Procedure**
 
@@ -60,38 +34,33 @@ Commutative law A B BA,A+B=B+A
 
 
 **Program:**
-i)
-module funct1(a,b,c,d,f1);
-input a,b,c,d;
-output f1;
-assign f1=((~b & ~d)|(~a & b & d)|(a & b & ~c));
-endmodule
 
-ii)
-module funct2(w,x,y,z,f2);
-input w,x,y,z;
-output f2;
-assign f2=((~y & z)|( w & y )|(x & y));
-endmodule
+**Program to implement the given logic function and to verify its operations in quartus using Verilog programming.** 
+
+ **Developed by:ROHIT G**
+ 
+ **RegisterNumber:212222240083**
+
+```
+
+module exp2(a,b,c,d,f1,w,x,y,z,f2);
+input a,b,c,d,w,x,y,z;
+output f1,f2;
+assign f1=((~b&~d)| (~a&b&d)| (a&b&~c));
+assign f2=((~y&z)|(x&y)|(w&y));
+endmodule 
+```
 
 **RTL realization**
 
-**Output:**
-i)
-<img width="1920" height="1080" alt="Screenshot (25)" src="https://github.com/user-attachments/assets/9a054cd0-2711-433d-90a0-4b975d21af17" />
+<img width="512" height="410" alt="502658188-027a0976-886a-4274-ba9a-3fa0cafb0ea8" src="https://github.com/user-attachments/assets/b905452b-b995-4d0f-af60-7cbdea39cd69" />
 
-ii)
-<img width="1920" height="1080" alt="Screenshot (27)" src="https://github.com/user-attachments/assets/af8e7137-4721-47f5-bea9-de98fab60209" />
 
 
 **RTL**
 
-**Timing Diagram**
-i)
-<img width="1920" height="1080" alt="Screenshot (26)" src="https://github.com/user-attachments/assets/7212250c-7562-4de9-875c-5e6c421f3893" />
+<img width="1005" height="586" alt="502658989-b1ed9be3-6475-40ed-bb82-890855579dbd" src="https://github.com/user-attachments/assets/84019e50-81fe-4e4e-b6ed-88fc8445806f" />
 
-ii)
-<img width="1920" height="1080" alt="Screenshot (28)" src="https://github.com/user-attachments/assets/5cbb52c5-c624-434f-b546-bf9d4f861d12" />
 
 **Result:**
 
